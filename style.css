@@ -1,0 +1,49 @@
+body {
+    font-family: Verdana;
+    background-color: #2a3442;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    min-height: 100vh;
+    margin: 0;
+}
+
+#container {
+    width: 35%;
+    background-color: #AEE8E8;
+    border-radius: 20px;
+    text-align: center;
+    padding: 5px;
+    box-shadow: 10px 10px 10px rgba(255, 248, 248, 0.2);
+}
+
+#logo {
+    width: 60%;
+}
+
+#input {
+    width: 300px;
+}
+
+#qr-box {
+    display: block;
+    padding: 20px;
+}
+
+#qr-code {
+    display: none;
+    margin: 0 auto;
+}
+
+#generate-button {
+    border-radius: 10px;
+    background-color: #62c5cc;
+    padding: 10px 20px;
+    border: none;
+    padding: 10px;
+}
+
+#generate-button:hover {
+    background-color: #297d7f;
+    cursor: pointer;
+}
