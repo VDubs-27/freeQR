@@ -4,6 +4,7 @@ const codeSize = document.getElementById("code-size");
 const loading = document.getElementById("loading");
 const qrCode = document.getElementById("qr-code");
 const copyButton = document.getElementById("copy");
+const download = document.getElementById("download");
 let apiKey;
 
 loading.style.display = "none";
@@ -25,6 +26,7 @@ function generate() {
 
     qrCode.onload = () => {
         loading.style.display = "none";
+        download.style.display = "inline-flex";
     };
 
     input.value = "";
@@ -36,6 +38,10 @@ button.addEventListener("click", () => {
 });
 
 copyButton.addEventListener("click", () => {
-    navigator.clipboard.writeText("google.co.nz")
-    alert("Site link copied - share it with others!")
+    navigator.clipboard.writeText("main--anyweatheranytime.netlify.app")
+    alert("Site link copied to clipboard - share it with others!")
+});
+
+download.addEventListener("click", () => {
+    
 });

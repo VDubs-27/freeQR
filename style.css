@@ -35,8 +35,35 @@ body {
     width: 60%;
 }
 
+#download {
+    display: none;
+    align-items: center;
+    background-color: #007bff;
+    border: none;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 15px;
+    cursor: pointer;
+    justify-content: center;
+    margin: 20px;
+    width: 300px;
+    transition: 0.3s ease, transform 0.2s ease;
+}
+
+#download:hover {
+    transform: scale(1.05);
+}
+
+#download img {
+    width: 10%;
+}
+
 #input {
     width: 300px;
+    padding: 10px;
+    border-radius: 15px;
+    border: none;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
 }
 
 #qr-box {
@@ -55,9 +82,10 @@ body {
     padding: 10px 20px;
     border: none;
     padding: 10px;
+    transition: 0.3s ease, transform 0.2s ease;
 }
 
 #generate-button:hover {
-    background-color: #297d7f;
+    transform: scale(1.05);
     cursor: pointer;
 }
