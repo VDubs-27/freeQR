@@ -43,7 +43,7 @@ button.addEventListener("click", () => {
 });
 
 copyButton.addEventListener("click", () => {
-    navigator.clipboard.writeText("main--anyweatheranytime.netlify.app")
+    navigator.clipboard.writeText("main--freeqr.netlify.app")
     alert("Site link copied to clipboard - share it with others!")
 });
 
