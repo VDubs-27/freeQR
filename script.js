@@ -5,9 +5,11 @@ const loading = document.getElementById("loading");
 const qrCode = document.getElementById("qr-code");
 const copyButton = document.getElementById("copy");
 const download = document.getElementById("download");
+const restart = document.getElementById("restart");
 let apiKey;
 
 loading.style.display = "none";
+restart.style.display = "none";
 
 function generate() {
     if (!input.value || input.value.trim() === "") {
@@ -27,6 +29,9 @@ function generate() {
     qrCode.onload = () => {
         loading.style.display = "none";
         download.style.display = "inline-flex";
+        button.style.display = "none";
+        restart.style.display = "block";
+        input.style.display = "none";
     };
 
     input.value = "";
@@ -42,6 +47,30 @@ copyButton.addEventListener("click", () => {
     alert("Site link copied to clipboard - share it with others!")
 });
 
-download.addEventListener("click", () => {
-    
+download.addEventListener("click", async () => {
+    if (!qrCode.src) {
+        alert("No QR code generated to download!");
+        return;
+    }
+
+    try {
+        const response = await fetch(qrCode.src);
+        if (!response.ok) throw new Error("Failed to fetch the QR code image");
+
+        const blob = await response.blob();
+
+        const objectURL = URL.createObjectURL(blob);
+
+        const link = document.createElement("a");
+        link.href = objectURL;
+        link.download = "QRcode.png";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+
+        URL.revokeObjectURL(objectURL);
+    } catch (error) {
+        console.error("Error downloading the QR code:", error);
+        alert("Failed to download the QR code. Please try again.");
+    }
 });
