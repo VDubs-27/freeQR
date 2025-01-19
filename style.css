@@ -9,7 +9,7 @@ body {
 }
 
 #container {
-    width: 35%;
+    width: 500px;
     background-color: #AEE8E8;
     border-radius: 20px;
     text-align: center;
@@ -58,7 +58,7 @@ body {
     width: 10%;
 }
 
-#input {
+input {
     width: 300px;
     padding: 10px;
     border-radius: 15px;
